@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OvO.PayPage"
+             xmlns:local="clr-namespace:OvO.ViewModels"
+             Title="Глобальные расходы">
+
+    <StackLayout Padding="20">
+
+        <Label Text="Планируемые расходы" FontSize="24" HorizontalOptions="Center"/>
+
+        <Entry Placeholder="Введите статью" Text="{Binding NewTaskTitle3, Mode=TwoWay}"/>
+        <Button Text="Добавить" Command="{Binding AddItem3Command}"/>
+
+        <CollectionView ItemsSource="{Binding TodoPay}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Orientation="Horizontal" Padding="5">
+                        <Label Text="{Binding Title3}" FontSize="18" VerticalOptions="Center"/>
+                        <Button Text="x" Command="{Binding Source={RelativeSource AncestorType={x:Type local:PayViewModel}}, Path=DeleteItem3Command}" CommandParameter="{Binding .}"/>
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+    </StackLayout>
+    
+</ContentPage>

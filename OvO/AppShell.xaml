@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="OvO.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:OvO"
+    Shell.FlyoutBehavior="Flyout"
+    Title="OvO">
+
+    <ShellContent
+        Title="Планер"
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Route="MainPage" />
+
+    <ShellContent
+        Title="Глобальные планы"
+        ContentTemplate="{DataTemplate local:Week}"
+        Route="Week" />
+
+    <ShellContent
+        Title="Глобальные расходы"
+        ContentTemplate="{DataTemplate local:PayPage}"
+        Route="PayPage" />
+
+
+
+</Shell>
